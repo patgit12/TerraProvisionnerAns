@@ -7,7 +7,7 @@ resource "null_resource" "vscode-config" {
     host        = aws_instance.ubuntu.public_ip
     user        = "ubuntu"
     password    = ""
-    private_key = file("~/Downloads/ansible-key.pem")
+    private_key = file("~/Downloads/keyforDestop.pem")
   }
 
   provisioner "remote-exec" {
@@ -18,14 +18,14 @@ resource "null_resource" "vscode-config" {
     command = templatefile("${var.os}-ssh-script.tpl", {
       hostname     = aws_instance.ubuntu.public_ip
       user         = "ansible",
-      IdentityFile = "~/Downloads/ansible-key.pem"
+      IdentityFile = "~/Downloads/keyforDestop.pem"
     })
     interpreter = var.os == "windows" ? ["powershell", "-Command"] : ["bash", "-c"]
   }
 }
 
 resource "time_sleep" "wait_for_instance" {
-  create_duration = "180s"
+  create_duration = "120s"
 
   depends_on = [aws_instance.ubuntu]
 }
