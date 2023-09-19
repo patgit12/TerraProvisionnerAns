@@ -1,5 +1,4 @@
 #!/bin/bash
-
 sudo mkdir /home/ansible/.ssh/
 sudo chown -R ansible:ansible /home/ansible/.ssh
 sudo cp /home/ubuntu/.ssh/authorized_keys /home/ansible/.ssh/
