@@ -10,10 +10,10 @@ variable "my_instance_type" {
 
 variable "my_key" {
   type    = string
-  default = "ansible-key"
+  default = "keyforDestop.pem"
 }
 
 variable "os" {
   type    = string
-  #default = "linux"
+  default = "windows"
 }
