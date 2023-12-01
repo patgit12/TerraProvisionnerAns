@@ -15,5 +15,5 @@ variable "my_key" {
 
 variable "os" {
   type    = string
-  #default = "windows"
+  #default = "windows" this allow to choose your OS. In my case it's windows
 }
