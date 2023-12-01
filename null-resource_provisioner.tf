@@ -7,7 +7,7 @@ resource "null_resource" "vscode-config" {
     host        = aws_instance.ubuntu.public_ip
     user        = "ubuntu"
     password    = ""
-    private_key = file("~/Downloads/keyforDestop.pem")
+    private_key = file("C:/Users/kochf/Downloads/keyforDestop.pem")
   }
 
   provisioner "remote-exec" {
